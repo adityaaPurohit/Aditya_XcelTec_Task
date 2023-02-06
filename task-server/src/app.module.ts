@@ -12,7 +12,7 @@ import { CommonModule } from './common/common.module';
     CommonModule,
     // Please add your database link hear
     MongooseModule.forRoot(
-      'mongodb+srv://mongoUser:aNVzj8uNqfov1TAo@cluster0.sjzc1.mongodb.net/XcelTec_task',
+      "Please add your database link hear  /XcelTec_task",
     ),
     ConfigModule.forRoot({
       isGlobal: true,
