@@ -1,0 +1,49 @@
+<div class="Hcard">
+  <span class="header">Track List</span>
+  <div style="float: right; display: flex">
+    <button class="btn" [routerLink]="['/add-audio']">Add Audio</button>
+    <button class="btn" (click)="logOut()">Logout</button>
+  </div>
+</div>
+<div class="mainDIv">
+  <div class="mainDIv" *ngFor="let audio of audioList">
+    <div class="card">
+      <div id="container">
+        <div id="menu-wrap">
+          <input type="checkbox" class="toggler" />
+          <div class="dots">
+            <div></div>
+          </div>
+          <div class="menu">
+            <div>
+              <ul>
+                <li>
+                  <a class="link" (click)="onEditTrack(audio._id)"
+                    >Edit Track</a
+                  >
+                </li>
+                <hr />
+                <li>
+                  <a class="link" (click)="onDeleteTrack(audio._id)"
+                    >Remove Track</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img [src]="audio.image.filePath" alt="Avatar" style="width:100%" />
+      <div class="container">
+        <h4>
+          <b>{{ audio.song_name }}</b>
+        </h4>
+        <audio controls>
+          <source [src]="audio.audio.filePath" type="audio/ogg" />
+          <source [src]="audio.audio.filePath" type="audio/mpeg" />
+          Your browser does not support the audio element
+        </audio>
+      </div>
+    </div>
+  </div>
+</div>
